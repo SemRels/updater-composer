@@ -28,7 +28,7 @@ Files: Makefile
  .reuse/dep5
  cmd/**/*.go
  internal/**/*.go
- schema/**/*.json
+ schema/*.json
 Copyright: 2026 The updater-composer Authors
 License: Apache-2.0
 

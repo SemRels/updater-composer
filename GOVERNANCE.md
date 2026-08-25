@@ -2,7 +2,7 @@
 
 ## Overview
 
-updater-composer is an open source project governed by its maintainers and community contributors. This document describes how decisions are made and how to participate.
+{{PROJECT_NAME}} is an open source project governed by its maintainers and community contributors. This document describes how decisions are made and how to participate.
 
 ## Project Roles
 

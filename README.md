@@ -40,11 +40,11 @@ cosign verify ghcr.io/semrels/updater-composer:latest \
 
 ```yaml
 plugins:
-  - name: updater-composer
-    path: ~/.semrel/plugins/semrel-plugin-updater-composer
-    env:
-      SEMREL_PLUGIN_FILE: "composer.json"
-      SEMREL_PLUGIN_UPDATE_VERSION_FIELD: "true"
+  - uses: "@semrel/updater-composer"
+    phase: pre-tag
+    args:
+      file: "composer.json"
+      update_version_field: "true"
 ```
 
 ## `.semrel.yaml` example
@@ -60,22 +60,24 @@ branches:
   - name: main
 
 plugins:
-  - uses: condition-github-actions
+  - uses: "@semrel/condition-github-actions"
     phase: condition
-  - name: updater-composer
-    path: ~/.semrel/plugins/semrel-plugin-updater-composer
-    env:
-      SEMREL_PLUGIN_FILE: composer.json
-      SEMREL_PLUGIN_UPDATE_VERSION_FIELD: "true"
+  - uses: "@semrel/updater-composer"
+    phase: pre-tag
+    args:
+      file: composer.json
+      update_version_field: "true"
 ```
 
-## `SEMREL_PLUGIN_*` variables
+## Options
 
-| Name | Required | Description | Default |
-| --- | --- | --- | --- |
-| `SEMREL_PLUGIN_FILE` | Optional | Path to the Composer manifest to update. Mirrors `updater-npm`'s file-path contract. | composer.json |
-| `SEMREL_PLUGIN_COMPOSER_FILE` | Optional | Alias for `SEMREL_PLUGIN_FILE` when a Composer-specific override name is preferred. | unset |
-| `SEMREL_PLUGIN_UPDATE_VERSION_FIELD` | Optional | When `true`, updates or adds the `version` field in `composer.json`. Disabled by default because Composer prefers deriving versions from VCS tags. | false |
+Every option can be set as an entry under `args` in `.semrel.yaml`. semrel passes each entry to the plugin as the environment variable shown in the table, so you can also set that variable directly (for example in your CI environment) instead of using `args`.
+
+| Argument | Environment variable | Required | Description | Default |
+| --- | --- | --- | --- | --- |
+| `file` | `SEMREL_PLUGIN_FILE` | Optional | Path to the Composer manifest to update. Mirrors `updater-npm`'s file-path contract. | composer.json |
+| `composer_file` | `SEMREL_PLUGIN_COMPOSER_FILE` | Optional | Alias for `SEMREL_PLUGIN_FILE` when a Composer-specific override name is preferred. | unset |
+| `update_version_field` | `SEMREL_PLUGIN_UPDATE_VERSION_FIELD` | Optional | When `true`, updates or adds the `version` field in `composer.json`. Disabled by default because Composer prefers deriving versions from VCS tags. | false |
 
 ## `SEMREL_*` release context used
 

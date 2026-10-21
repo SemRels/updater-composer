@@ -1,9 +1,10 @@
 # updater-composer
 
 [![Latest Release](https://img.shields.io/github/v/release/SemRels/updater-composer?label=version&color=blue)](https://github.com/SemRels/updater-composer/releases/latest)
-[![License](https://img.shields.io/github/license/SemRels/updater-composer)](https://github.com/SemRels/updater-composer/blob/main/LICENSE)
 [![CI](https://github.com/SemRels/updater-composer/actions/workflows/ci.yml/badge.svg)](https://github.com/SemRels/updater-composer/actions/workflows/ci.yml)
-[![Scorecard](https://api.scorecard.dev/projects/github.com/SemRels/updater-composer/badge)](https://scorecard.dev/viewer/?uri=github.com/SemRels/updater-composer)
+[![License](https://img.shields.io/github/license/SemRels/updater-composer)](LICENSE)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/SemRels/updater-composer/badge)](https://scorecard.dev/viewer/?uri=github.com/SemRels/updater-composer)
+[![REUSE status](https://api.reuse.software/badge/github.com/SemRels/updater-composer)](https://api.reuse.software/info/github.com/SemRels/updater-composer)
 
 Updates the `version` field in `composer.json` when explicitly opted in.
 

@@ -1,6 +1,6 @@
 # Code of Conduct
 
-updater-composer is committed to providing a welcoming and harassment-free community.
+`updater-composer` is committed to providing a welcoming and harassment-free community.
 
 ## Our Pledge
 

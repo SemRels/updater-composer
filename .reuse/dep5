@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: updater-composer
-Upstream-Contact: The updater-composer Authors <https://github.com/SemRels/updater-composer>
+Upstream-Contact: The semrel Authors <https://github.com/SemRels/updater-composer>
 Source: https://github.com/SemRels/updater-composer
 
 # ----------------------------------------------------------------------------
@@ -8,28 +8,31 @@ Source: https://github.com/SemRels/updater-composer
 # ----------------------------------------------------------------------------
 Files: *.md
  .github/**/*.md
-Copyright: 2026 The updater-composer Authors
+Copyright: 2026 The semrel Authors
 License: Apache-2.0
 
 # ----------------------------------------------------------------------------
 # Build and tooling configuration
 # ----------------------------------------------------------------------------
-Files: Makefile
+Files: Taskfile.yml
+ Taskfile.yaml
  Dockerfile
  go.mod
  go.sum
  .golangci.yml
  *.template
- .gitignore
+ .gitignore .pre-commit-config.yaml
+ .github/renovate.json
  .github/**/*.yml
  .github/**/*.yaml
  .github/**/*.json
  .github/**/*.template
  .reuse/dep5
+ commitlint.config.js
  cmd/**/*.go
  internal/**/*.go
  schema/*.json
-Copyright: 2026 The updater-composer Authors
+Copyright: 2026 The semrel Authors
 License: Apache-2.0
 
 # ----------------------------------------------------------------------------
@@ -38,5 +41,5 @@ License: Apache-2.0
 Files: LICENSE
  LICENSES/Apache-2.0.txt
  NOTICE
-Copyright: 2026 The updater-composer Authors
+Copyright: 2026 The semrel Authors
 License: Apache-2.0

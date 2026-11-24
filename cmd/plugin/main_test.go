@@ -56,6 +56,12 @@ func TestRunNoOpByDefault(t *testing.T) {
 }
 
 func TestRunDryRunDoesNotWriteFile(t *testing.T) {
+	for _, value := range []string{"true", "1"} {
+		t.Run(value, func(t *testing.T) { runDryRunTest(t, value) })
+	}
+}
+
+func runDryRunTest(t *testing.T, value string) {
 	t.Parallel()
 
 	dir := testDir(t)
@@ -65,7 +71,7 @@ func TestRunDryRunDoesNotWriteFile(t *testing.T) {
 
 	env := map[string]string{
 		"SEMREL_VERSION":                     "1.1.0",
-		"SEMREL_DRY_RUN":                     "true",
+		"SEMREL_DRY_RUN":                     value,
 		"SEMREL_PLUGIN_FILE":                 file,
 		"SEMREL_PLUGIN_UPDATE_VERSION_FIELD": "true",
 	}

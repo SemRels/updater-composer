@@ -45,7 +45,7 @@ func run(stdout, stderr io.Writer, getenv func(string) string, updater versionUp
 		file = "composer.json"
 	}
 
-	dryRun := getenv("SEMREL_DRY_RUN") == "true" || getenv("SEMREL_PLUGIN_DRY_RUN") == "true"
+	dryRun := getenv("SEMREL_DRY_RUN") == "true" || getenv("SEMREL_DRY_RUN") == "1" || getenv("SEMREL_PLUGIN_DRY_RUN") == "true"
 
 	if getenv("SEMREL_PLUGIN_UPDATE_VERSION_FIELD") != "true" {
 		_, _ = fmt.Fprintln(stderr, "updater-composer: version field updates are disabled by default because Composer discourages hardcoded versions in composer.json; set SEMREL_PLUGIN_UPDATE_VERSION_FIELD=true to opt in")
